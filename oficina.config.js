@@ -1,63 +1,85 @@
 // ============================================================
-//  OFICINA VIRTUAL 3D · TU CONFIGURACIÓN
-//  Cambia aquí el nombre, los departamentos, los colores y los agentes.
-//  Todo lo de este archivo son DATOS DE EJEMPLO (empresa ficticia).
+//  OFICINA VIRTUAL 3D · NODO BIM
+//  Consultoría BIM/AEC: modelado, metrados, coordinación y automatización.
+//  Los agentes, tareas y actividad son ILUSTRATIVOS (simulación de escaparate).
+//  No incluye datos reales de clientes ni claves.
 // ============================================================
 window.OFICINA = {
   // Nombre que flota sobre el núcleo central y sale en la cabecera
-  empresa: 'Mi Empresa',
-  lema: 'Oficina virtual 3D',
+  empresa: 'Nodo BIM',
+  lema: 'Consultoría BIM y automatización',
   colorCentral: '#7c5ce6',
 
   // Recepción, en el centro (pon `recepcion: false` para quitarla)
   recepcion: {
     nombre: 'Recepción',
-    tareas: ['Lee un mensaje nuevo y decide a quién pasarlo', 'Busca en internet: horario de un proveedor', 'Escribe la respuesta de bienvenida'],
+    tareas: ['Lee una consulta nueva y la pasa al equipo', 'Busca en internet: datos públicos del proyecto', 'Escribe la respuesta de bienvenida'],
   },
 
   // Cada departamento es un edificio (máximo 5). Cada agente tiene su propia oficina dentro.
-  // `oficina` decide cómo se amuebla su puesto. Tipos: ventas, captacion, atencion, contenido, investigacion,
-  // desarrollo, entrega, finanzas, direccion, pizarra, servidores, seguridad, laboratorio, comunidad, academia,
-  // analitica, formacion.
-  // `estado` (opcional): 'funciona' (por defecto), 'a_medias' o 'no_existe' (sale en obras y sin agente).
+  // Tipos de oficina: ventas, captacion, atencion, contenido, investigacion, desarrollo, entrega, finanzas,
+  // direccion, pizarra, servidores, seguridad, laboratorio, comunidad, academia, analitica, formacion.
   // Las tareas que empiezan por «Busca en internet» o «Lee» cambian el holograma que flota sobre el agente.
   departamentos: [
     {
-      id: 'ventas',
-      nombre: 'Ventas',
-      color: '#3f7be0',
-      responsable: { nombre: 'Responsable de ventas', tareas: ['Reparte los contactos del día', 'Revisa las propuestas del equipo', 'Mira el embudo de la semana'] },
+      id: 'comercial',
+      nombre: 'Comercial',
+      color: '#4a7fe0',
+      zona: 'Comercial',
+      responsable: { nombre: 'Responsable comercial', tareas: ['Reparte las oportunidades del día', 'Revisa las propuestas del equipo', 'Lee el resumen de la semana'] },
       agentes: [
-        { id: 'ventas-1', nombre: 'Agente de ventas', puesto: 'Propuestas', oficina: 'ventas',
-          tareas: ['Lee la ficha de un contacto nuevo', 'Escribe una propuesta a medida', 'Busca en internet: precios de la competencia'] },
-        { id: 'ventas-2', nombre: 'Agente de captación', puesto: 'Captación', oficina: 'captacion',
-          tareas: ['Busca en internet: negocios de la zona', 'Escribe el primer mensaje', 'Lee las respuestas de ayer'] },
+        { id: 'comercial-1', nombre: 'Agente de captación', puesto: 'Captación', oficina: 'captacion',
+          tareas: ['Busca en internet: constructoras con obras en licitación', 'Escribe el primer mensaje de contacto', 'Lee las respuestas recibidas'] },
+        { id: 'comercial-2', nombre: 'Agente de propuestas', puesto: 'Propuestas', oficina: 'ventas',
+          tareas: ['Lee el alcance que pide el cliente', 'Escribe la propuesta de modelado BIM', 'Busca en internet: referencias de tarifas del sector'] },
       ],
     },
     {
-      id: 'atencion',
-      nombre: 'Atención al cliente',
-      color: '#2f9e6a',
-      responsable: { nombre: 'Responsable de atención', tareas: ['Revisa las conversaciones abiertas', 'Escribe las respuestas tipo', 'Lee las valoraciones de la semana'] },
+      id: 'modelado',
+      nombre: 'Modelado BIM',
+      color: '#9b6cf0',
+      zona: 'Modelado BIM',
+      responsable: { nombre: 'BIM Manager', tareas: ['Revisa el plan de ejecución BIM', 'Asigna los modelos por disciplina', 'Lee el control de calidad del modelo'] },
       agentes: [
-        { id: 'atencion-1', nombre: 'Agente de soporte', puesto: 'Soporte', oficina: 'atencion',
-          tareas: ['Lee el mensaje de un cliente', 'Escribe la respuesta', 'Busca en internet: solución a una incidencia'] },
-        { id: 'atencion-2', nombre: 'Agente de seguimiento', puesto: 'Seguimiento', oficina: 'entrega',
-          tareas: ['Lee el estado de un pedido', 'Escribe el aviso de envío', 'Escribe la encuesta de satisfacción'] },
+        { id: 'modelado-1', nombre: 'Agente de modelado', puesto: 'Modelado Revit', oficina: 'desarrollo',
+          tareas: ['Lee los planos de arquitectura', 'Escribe la estructura de niveles y rejillas', 'Modela muros, losas y columnas'] },
+        { id: 'modelado-2', nombre: 'Agente de familias', puesto: 'Familias paramétricas', oficina: 'laboratorio',
+          tareas: ['Busca en internet: ficha técnica de un fabricante', 'Escribe los parámetros de la familia', 'Lee la guía de nomenclatura'] },
       ],
     },
     {
-      id: 'contenido',
-      nombre: 'Contenido',
-      color: '#d98a2b',
-      responsable: { nombre: 'Responsable de contenido', tareas: ['Planifica el calendario', 'Revisa los textos del equipo', 'Lee los números de las redes'] },
+      id: 'metrados',
+      nombre: 'Metrados',
+      color: '#2fa58a',
+      zona: 'Metrados',
+      responsable: { nombre: 'Responsable de metrados', tareas: ['Revisa las cantidades del equipo', 'Lee la partida presupuestal', 'Valida el formato de entrega'] },
       agentes: [
-        { id: 'contenido-1', nombre: 'Agente de redes', puesto: 'Redes sociales', oficina: 'contenido',
-          tareas: ['Busca en internet: tendencias de la semana', 'Escribe el guion de un vídeo', 'Escribe los textos de las publicaciones'] },
-        { id: 'contenido-2', nombre: 'Agente de blog', puesto: 'Blog y web', oficina: 'investigacion',
-          tareas: ['Lee las preguntas de los clientes', 'Busca en internet: palabras clave', 'Escribe un artículo del blog'] },
-        { id: 'contenido-3', nombre: 'Agente de diseño', puesto: 'Diseño', oficina: 'pizarra', dibujo: 'wireframe',
-          tareas: ['Escribe las ideas de portada', 'Lee la guía de marca', 'Escribe los textos del anuncio'] },
+        { id: 'metrados-1', nombre: 'Agente de cantidades IFC', puesto: 'Cantidades IFC', oficina: 'analitica',
+          tareas: ['Lee el modelo IFC exportado', 'Escribe la tabla de metrados por partida', 'Busca en internet: norma de medición vigente'] },
+      ],
+    },
+    {
+      id: 'coordinacion',
+      nombre: 'Coordinación',
+      color: '#e0663f',
+      zona: 'Coordinación',
+      responsable: { nombre: 'Coordinador BIM', tareas: ['Prepara la reunión de coordinación', 'Revisa las interferencias críticas', 'Lee las respuestas a las RFI'] },
+      agentes: [
+        { id: 'coordinacion-1', nombre: 'Agente de interferencias', puesto: 'Detección de interferencias', oficina: 'pizarra', dibujo: 'diagrama',
+          tareas: ['Lee los modelos federados', 'Escribe el informe de interferencias', 'Agrupa los choques por disciplina'] },
+        { id: 'coordinacion-2', nombre: 'Agente de RFIs', puesto: 'Consultas (RFI)', oficina: 'atencion',
+          tareas: ['Lee una duda del equipo de obra', 'Escribe la RFI al proyectista', 'Busca en internet: detalle constructivo de referencia'] },
+      ],
+    },
+    {
+      id: 'automatizacion',
+      nombre: 'Automatización',
+      color: '#d6a52b',
+      zona: 'Automatización',
+      responsable: { nombre: 'Responsable de automatización', tareas: ['Prioriza las tareas repetitivas a automatizar', 'Revisa los scripts del equipo', 'Lee las sugerencias de los modeladores'] },
+      agentes: [
+        { id: 'automatizacion-1', nombre: 'Agente pyRevit', puesto: 'Scripts pyRevit', oficina: 'servidores',
+          tareas: ['Lee la API de Revit', 'Escribe un script de pyRevit', 'Busca en internet: ejemplo de la comunidad pyRevit'] },
       ],
     },
   ],
