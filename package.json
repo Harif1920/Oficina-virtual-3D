@@ -1,11 +1,11 @@
 {
-  "name": "profitia-oficina-virtual",
+  "name": "nodo-bim-oficina-virtual",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Oficina virtual en 3D con agentes que trabajan, se consultan y descansan. Web estática, sin servidor. Por Profitia.",
+  "description": "Oficina virtual en 3D con agentes que trabajan, se consultan y descansan. Web estática, sin servidor.",
   "license": "MIT",
-  "author": "Profitia (https://profitia.digital)",
+  "author": "Nodo BIM",
   "engines": { "node": ">=18" },
   "scripts": {
     "dev": "node herramientas/servidor-local.mjs",

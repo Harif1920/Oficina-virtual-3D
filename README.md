@@ -1,10 +1,10 @@
-# Oficina virtual 3D · por Profitia
+# Oficina virtual 3D · Nodo BIM
 
 Una **oficina futurista en 3D** donde tus agentes trabajan a la vista: cada departamento es un edificio de cristal con el color de tu marca, cada agente tiene su mesa, y los ves **trabajar, consultarse, entregar a su responsable, llevar recados y descansar** en la zona de ocio. Encima de cada uno flota el holograma de lo que está haciendo.
 
 Es una web **estática**: sin servidor, sin base de datos y sin claves. Se publica gratis en Vercel en unos minutos.
 
-> Hecho por [Profitia](https://profitia.digital) — IA para negocios. Si te sirve, deja una ⭐ en el repo.
+> Basada en la plantilla libre de Profitia (licencia MIT, ver [LICENSE](LICENSE)).
 
 ![Captura de la oficina virtual](captura.png)
 
